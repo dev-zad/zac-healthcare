@@ -1,48 +1,72 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 
-import { PatientForm } from "@/components/forms/PatientForm";
-import { PasskeyModal } from "@/components/PasskeyModal";
+import LifeButton from "@/components/lgButton";
+import { Typography } from "@/components/Typography";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
-const Home = ({ searchParams }: SearchParamProps) => {
-  const isAdmin = searchParams?.admin === "true";
+export function Home({ data }: { readonly data: any }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex h-screen max-h-screen">
-      {isAdmin && <PasskeyModal />}
-
-      <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[496px]">
-          <Image
-            src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
-            alt="patient"
-            className="mb-12 h-10 w-fit"
-          />
-
-          <PatientForm />
-
-          <div className="text-14-regular mt-20 flex justify-between">
-            <p className="justify-items-end text-dark-600 xl:text-left">
-              © 2024 CarePluse
-            </p>
-            <Link href="/?admin=true" className="text-green-500">
-              Admin
-            </Link>
+    <AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className=" relative flex flex-col items-center justify-center gap-20 px-4 lg:flex-col xl:flex-row"
+      >
+        <div className="flex flex-col px-4 md:py-2 lg:flex-row lg:py-[20px]">
+          <div className="flex flex-col">
+            <Typography
+              variant="overline"
+              className="text-start md:text-center lg:text-start"
+            >
+              His life metro
+            </Typography>
+            <Typography variant="h1" className="flex">
+              LOVE GOD.
+              <br className="block md:hidden lg:block" /> MAKE DISCIPLES.
+              <br className="md:hidden lg:block" /> IMPACT OUR WORLD.
+            </Typography>
+            <Typography variant="paragraph_md" className="text-black">
+              This is how we know what love is: Jesus Christ laid down his life
+              for us. And we ought to <br className="hidden lg:block" /> lay
+              down our lives for our brothers and sisters.
+              <br />- 1 John 3:16 (NIV)
+            </Typography>
+            <div className="py-4">
+              <Link href="/get-linked">
+                <LifeButton
+                  label="Get Linked"
+                  open={isOpen}
+                  className="border shadow-sm hover:shadow-md"
+                  setOpen={setIsOpen}
+                />
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
-
-      <Image
-        src="/assets/images/onboarding-img.png"
-        height={1000}
-        width={1000}
-        alt="patient"
-        className="side-img max-w-[50%]"
-      />
-    </div>
+        <div className="flex flex-col">
+          <Image
+            className="px-0 lg:px-4"
+            src="/assets/images/hislife.png"
+            alt="Description of the image"
+            width={500}
+            height={300}
+            layout="responsive"
+          />
+        </div>
+      </motion.div>
+    </AuroraBackground>
   );
-};
+}
 
 export default Home;

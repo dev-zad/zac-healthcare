@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { StatCard } from "@/components/StatCard";
 import { columns } from "@/components/table/columns";
 import { DataTable } from "@/components/table/DataTable";
+import { Typography } from "@/components/Typography";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
 
 const AdminPage = async () => {
@@ -12,16 +12,11 @@ const AdminPage = async () => {
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
       <header className="admin-header">
-        <Link href="/" className="cursor-pointer">
-          <Image
-            src="/assets/icons/logo-full.svg"
-            height={32}
-            width={162}
-            alt="logo"
-            className="h-8 w-fit"
-          />
+        <Link href="/" className="flex cursor-pointer flex-row gap-2 ">
+          <Typography variant="overline" className="text-white">
+            His Life Metro
+          </Typography>
         </Link>
-
         <p className="text-16-semibold">Admin Dashboard</p>
       </header>
 
@@ -37,19 +32,19 @@ const AdminPage = async () => {
           <StatCard
             type="appointments"
             count={appointments.scheduledCount}
-            label="Scheduled appointments"
+            label="Connected"
             icon={"/assets/icons/appointments.svg"}
           />
           <StatCard
             type="pending"
             count={appointments.pendingCount}
-            label="Pending appointments"
+            label="Pending "
             icon={"/assets/icons/pending.svg"}
           />
           <StatCard
             type="cancelled"
             count={appointments.cancelledCount}
-            label="Cancelled appointments"
+            label="Cancelled"
             icon={"/assets/icons/cancelled.svg"}
           />
         </section>

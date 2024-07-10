@@ -1,3 +1,4 @@
+import { RiHome5Fill } from "@remixicon/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,14 +20,11 @@ const RequestSuccess = async ({
 
   return (
     <div className=" flex h-screen max-h-screen px-[5%]">
-      <div className="success-img">
+      <div className="success-img flex flex-row gap-2">
         <Link href="/">
-          <Image
-            src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
-            alt="logo"
-            className="h-10 w-fit"
+          <RiHome5Fill
+            size={50}
+            className="text-gray-300 hover:text-slate-500 hover:shadow-lg"
           />
         </Link>
 
@@ -47,14 +45,7 @@ const RequestSuccess = async ({
         <section className="request-details">
           <p>Requested appointment details: </p>
           <div className="flex items-center gap-3">
-            <Image
-              src={doctor?.image!}
-              alt="doctor"
-              width={100}
-              height={100}
-              className="size-6"
-            />
-            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+            <p className="whitespace-nowrap">{doctor?.name}</p>
           </div>
           <div className="flex gap-2">
             <Image
@@ -73,7 +64,7 @@ const RequestSuccess = async ({
           </Link>
         </Button>
 
-        <p className="copyright">© 2024 CarePluse</p>
+        <p className="copyright">© 2024 HealthCare</p>
       </div>
     </div>
   );
