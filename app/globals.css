@@ -83,7 +83,7 @@
 
   /* ===== ADMIN */
   .admin-header {
-    @apply sticky top-3 z-20 mx-3 flex items-center justify-between rounded-2xl bg-dark-200 px-[5%] py-5 shadow-lg xl:px-12;
+    @apply sticky top-3 z-20 mx-3 flex items-center justify-between rounded-2xl bg-dark-500 px-[5%] py-5 shadow-lg xl:px-12;
   }
 
   .admin-main {
@@ -114,7 +114,7 @@
 
   /* ==== Stat Card */
   .stat-card {
-    @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-6 shadow-lg;
+    @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-6 shadow-lg hover:shadow-lg;
   }
 
   /* ==== Status Badge */
@@ -124,7 +124,7 @@
 
   /* Data Table */
   .data-table {
-    @apply z-10 w-full overflow-hidden rounded-lg border border-dark-400 shadow-lg;
+    @apply z-10 w-full overflow-hidden rounded-lg   shadow-lg;
   }
 
   .table-actions {
@@ -199,11 +199,11 @@
   }
 
   .shad-input {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-transparent h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-input-icon {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-transparent placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-textArea {
@@ -243,11 +243,11 @@
   }
 
   .shad-table-row-header {
-    @apply border-b border-dark-400 text-light-200 hover:bg-transparent !important;
+    @apply border-b text-[#3D3D3D] hover:bg-transparent !important;
   }
 
   .shad-table-row {
-    @apply border-b border-dark-400 text-light-200 !important;
+    @apply border-b  text-[#3D3D3D] !important;
   }
 
   .shad-otp {
@@ -268,7 +268,7 @@
 
   /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
   .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-dark-400 placeholder:text-dark-600 border-dark-500 !important;
+    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-transparent   !important;
   }
 
   /* =====  REACT DATE PICKER OVERRIDES */
@@ -347,4 +347,20 @@
 
 .PhoneInputInput::placeholder {
   color: #1a1d21;
+}
+@font-face {
+  font-family: "anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  color: #3d3d3d;
+}
+
+/* Font Inter*/
+
+@font-face {
+  font-family: "inter";
+  src: url("/fonts/inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 600;
 }

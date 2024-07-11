@@ -5,6 +5,24 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function flattenAttributes(data: any): any {
+  if (
+    typeof data !== "object" ||
+    data === null ||
+    data instanceof Date ||
+    typeof data === "function"
+  ) {
+    return data;
+  }
+
+  if (Array.isArray(data)) {
+    return data.map((item) => flattenAttributes(item));
+  }
+
+  const flattened: { [key: string]: any } = {};
+
+  return flattened;
+}
 export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
 
 export const convertFileToUrl = (file: File) => URL.createObjectURL(file);

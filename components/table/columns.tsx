@@ -1,14 +1,13 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import Image from "next/image";
 
 import { Doctors } from "@/constants";
-import { formatDateTime } from "@/lib/utils";
 import { Appointment } from "@/types/appwrite.types";
 
 import { AppointmentModal } from "../AppointmentModal";
 import { StatusBadge } from "../StatusBadge";
+import { Typography } from "../Typography";
 
 export const columns: ColumnDef<Appointment>[] = [
   {
@@ -19,10 +18,14 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "patient",
-    header: "Patient",
+    header: "Name",
     cell: ({ row }) => {
       const appointment = row.original;
-      return <p className="text-14-medium ">{appointment.patient.name}</p>;
+      return (
+        <Typography variant="paragraph_sm" className="text-[#3D3D3D]">
+          {appointment.patient.name}
+        </Typography>
+      );
     },
   },
   {
@@ -37,21 +40,21 @@ export const columns: ColumnDef<Appointment>[] = [
       );
     },
   },
-  {
-    accessorKey: "schedule",
-    header: "Appointment",
-    cell: ({ row }) => {
-      const appointment = row.original;
-      return (
-        <p className="text-14-regular min-w-[100px]">
-          {formatDateTime(appointment.schedule).dateTime}
-        </p>
-      );
-    },
-  },
+  // {
+  //   accessorKey: "schedule",
+  //   header: "Appointment",
+  //   cell: ({ row }) => {
+  //     const appointment = row.original;
+  //     return (
+  //       <p className="text-14-regular min-w-[100px]">
+  //         {formatDateTime(appointment.schedule).dateTime}
+  //       </p>
+  //     );
+  //   },
+  // },
   {
     accessorKey: "primaryPhysician",
-    header: "Doctor",
+    header: "Tribe",
     cell: ({ row }) => {
       const appointment = row.original;
 
@@ -61,14 +64,12 @@ export const columns: ColumnDef<Appointment>[] = [
 
       return (
         <div className="flex items-center gap-3">
-          <Image
-            src={doctor?.image!}
-            alt="doctor"
-            width={100}
-            height={100}
-            className="size-8"
-          />
-          <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+          <Typography
+            variant="paragraph_sm"
+            className="whitespace-nowrap text-[#3D3D3D]"
+          >
+            {doctor?.name}
+          </Typography>
         </div>
       );
     },
