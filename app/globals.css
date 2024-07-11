@@ -191,11 +191,11 @@
   }
 
   .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
+    @apply border border-dark-500 cursor-pointer  text-white !important;
   }
 
   .shad-input-label {
-    @apply text-14-medium text-dark-700 !important;
+    @apply text-14-medium  !important;
   }
 
   .shad-input {
@@ -203,11 +203,11 @@
   }
 
   .shad-input-icon {
-    @apply bg-transparent placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-transparent  h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-combobox-item {
@@ -219,15 +219,15 @@
   }
 
   .shad-select-trigger {
-    @apply bg-dark-400  placeholder:text-dark-600 border-dark-500 h-11 focus:ring-0 focus:ring-offset-0 !important;
+    @apply placeholder:text-dark-600  h-11 focus:ring-0 focus:ring-offset-0 !important;
   }
 
   .shad-select-content {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply bg-white  !important;
   }
 
   .shad-dialog {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply bg-white  !important;
   }
 
   .shad-dialog button {
@@ -255,11 +255,11 @@
   }
 
   .shad-otp-slot {
-    @apply text-36-bold justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
+    @apply text-36-bold font-anton justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
   }
 
   .shad-alert-dialog {
-    @apply space-y-5 bg-dark-400 border-dark-500 outline-none !important;
+    @apply space-y-5 outline-none !important;
   }
 
   .shad-sheet-content button {
@@ -268,7 +268,7 @@
 
   /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
   .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-transparent   !important;
+    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-white   !important;
   }
 
   /* =====  REACT DATE PICKER OVERRIDES */
@@ -340,7 +340,7 @@
 .PhoneInputInput {
   outline: none;
   margin-left: 4px;
-  background: #1a1d21;
+  background: #ffffff;
   font-size: 14px;
   font-weight: 500;
 }

@@ -20,6 +20,8 @@ import {
 } from "@/components/ui/input-otp";
 import { decryptKey, encryptKey } from "@/lib/utils";
 
+import { Typography } from "./Typography";
+
 export const PasskeyModal = () => {
   const router = useRouter();
   const path = usePathname();
@@ -70,7 +72,9 @@ export const PasskeyModal = () => {
       <AlertDialogContent className="shad-alert-dialog">
         <AlertDialogHeader>
           <AlertDialogTitle className="flex items-start justify-between">
-            Admin Access Verification
+            <Typography variant="paragraph">
+              Admin Access Verification
+            </Typography>
             <Image
               src="/assets/icons/close.svg"
               alt="close"
@@ -81,7 +85,9 @@ export const PasskeyModal = () => {
             />
           </AlertDialogTitle>
           <AlertDialogDescription>
-            To access the admin page, please enter the passkey.
+            <Typography variant="paragraph_sm">
+              To access the admin page, please enter the passkey.
+            </Typography>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div>
@@ -111,7 +117,7 @@ export const PasskeyModal = () => {
             onClick={(e) => validatePasskey(e)}
             className="shad-primary-btn w-full"
           >
-            Enter Admin Passkey
+            <Typography variant="paragraph_sm">Enter Admin Passkey</Typography>
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

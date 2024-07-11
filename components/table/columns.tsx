@@ -13,12 +13,12 @@ export const columns: ColumnDef<Appointment>[] = [
   {
     header: "#",
     cell: ({ row }) => {
-      return <p className="text-14-medium ">{row.index + 1}</p>;
+      return <Typography variant="paragraph_sm">{row.index + 1}</Typography>;
     },
   },
   {
     accessorKey: "patient",
-    header: "Name",
+    header: () => <Typography variant="paragraph_sm">Name</Typography>,
     cell: ({ row }) => {
       const appointment = row.original;
       return (
@@ -30,7 +30,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "status",
-    header: "Status",
+    header: () => <Typography variant="paragraph_sm">Status</Typography>,
     cell: ({ row }) => {
       const appointment = row.original;
       return (
@@ -54,7 +54,7 @@ export const columns: ColumnDef<Appointment>[] = [
   // },
   {
     accessorKey: "primaryPhysician",
-    header: "Tribe",
+    header: () => <Typography variant="paragraph_sm">Tribe</Typography>,
     cell: ({ row }) => {
       const appointment = row.original;
 
@@ -76,7 +76,11 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="pl-4">Actions</div>,
+    header: () => (
+      <div className="pl-4">
+        <Typography variant="paragraph_sm">Actions</Typography>
+      </div>
+    ),
     cell: ({ row }) => {
       const appointment = row.original;
 
@@ -86,7 +90,7 @@ export const columns: ColumnDef<Appointment>[] = [
             patientId={appointment.patient.$id}
             userId={appointment.userId}
             appointment={appointment}
-            type="schedule"
+            type="connect"
             title="Schedule Appointment"
             description="Please confirm the following details to schedule."
           />

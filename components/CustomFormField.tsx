@@ -5,6 +5,7 @@ import ReactDatePicker from "react-datepicker";
 import { Control } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
 
+import { Typography } from "./Typography";
 import { Checkbox } from "./ui/checkbox";
 import {
   FormControl,
@@ -86,7 +87,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
             withCountryCallingCode
             value={field.value as E164Number | undefined}
             onChange={field.onChange}
-            className="input-phone"
+            className="h-11 rounded-md border px-3"
           />
         </FormControl>
       );
@@ -100,33 +101,33 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
               onCheckedChange={field.onChange}
             />
             <label htmlFor={props.name} className="checkbox-label">
-              {props.label}
+              <Typography variant="paragraph_sm">{props.label}</Typography>
             </label>
           </div>
         </FormControl>
       );
-    case FormFieldType.DATE_PICKER:
-      return (
-        <div className="flex rounded-md border border-dark-500 bg-dark-400">
-          <Image
-            src="/assets/icons/calendar.svg"
-            height={24}
-            width={24}
-            alt="user"
-            className="ml-2"
-          />
-          <FormControl>
-            <ReactDatePicker
-              showTimeSelect={props.showTimeSelect ?? false}
-              selected={field.value}
-              onChange={(date: Date) => field.onChange(date)}
-              timeInputLabel="Time:"
-              dateFormat={props.dateFormat ?? "MM/dd/yyyy"}
-              wrapperClassName="date-picker"
-            />
-          </FormControl>
-        </div>
-      );
+    // case FormFieldType.DATE_PICKER:
+    //   return (
+    //     <div className="flex rounded-md border border-dark-500 bg-dark-400">
+    //       <Image
+    //         src="/assets/icons/calendar.svg"
+    //         height={24}
+    //         width={24}
+    //         alt="user"
+    //         className="ml-2"
+    //       />
+    //       <FormControl>
+    //         <ReactDatePicker
+    //           showTimeSelect={props.showTimeSelect ?? false}
+    //           selected={field.value}
+    //           onChange={(date: Date) => field.onChange(date)}
+    //           timeInputLabel="Time:"
+    //           dateFormat={props.dateFormat ?? "MM/dd/yyyy"}
+    //           wrapperClassName="date-picker"
+    //         />
+    //       </FormControl>
+    //     </div>
+    //   );
     case FormFieldType.SELECT:
       return (
         <FormControl>
@@ -159,7 +160,9 @@ const CustomFormField = (props: CustomProps) => {
       render={({ field }) => (
         <FormItem className="flex-1">
           {props.fieldType !== FormFieldType.CHECKBOX && label && (
-            <FormLabel className="shad-input-label">{label}</FormLabel>
+            <FormLabel className="shad-input-label">
+              <Typography variant="paragraph_md">{label}</Typography>
+            </FormLabel>
           )}
           <RenderInput field={field} props={props} />
 

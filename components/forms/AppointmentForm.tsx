@@ -16,9 +16,9 @@ import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
 
 import "react-datepicker/dist/react-datepicker.css";
-
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
+import { Typography } from "../Typography";
 import { Form } from "../ui/form";
 
 export const AppointmentForm = ({
@@ -30,7 +30,7 @@ export const AppointmentForm = ({
 }: {
   userId: string;
   patientId: string;
-  type: "create" | "schedule" | "cancel";
+  type: "create" | "connect" | "cancel";
   appointment?: Appointment;
   setOpen?: Dispatch<SetStateAction<boolean>>;
 }) => {
@@ -57,7 +57,7 @@ export const AppointmentForm = ({
 
     let status;
     switch (type) {
-      case "schedule":
+      case "connect":
         status = "scheduled";
         break;
       case "cancel":
@@ -116,7 +116,7 @@ export const AppointmentForm = ({
     case "cancel":
       buttonLabel = "Cancel Appointment";
       break;
-    case "schedule":
+    case "connect":
       buttonLabel = "Schedule Appointment";
       break;
     default:
@@ -147,20 +147,22 @@ export const AppointmentForm = ({
               {Doctors.map((doctor, i) => (
                 <SelectItem key={doctor.name + i} value={doctor.name}>
                   <div className="flex cursor-pointer items-center gap-2">
-                    <p>{doctor.name}</p>
+                    <Typography variant="paragraph_sm">
+                      {doctor.name}
+                    </Typography>
                   </div>
                 </SelectItem>
               ))}
             </CustomFormField>
 
-            <CustomFormField
+            {/* <CustomFormField
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
-              name="schedule"
+              name="connect"
               label="Availability for lifegroup meeting"
               showTimeSelect
               dateFormat="MM/dd/yyyy  -  h:mm aa"
-            />
+            /> */}
           </>
         )}
 

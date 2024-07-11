@@ -13,9 +13,11 @@ import {
 } from "@/components/ui/dialog";
 import { Appointment } from "@/types/appwrite.types";
 
+// eslint-disable-next-line import/order
 import { AppointmentForm } from "./forms/AppointmentForm";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { Typography } from "./Typography";
 
 export const AppointmentModal = ({
   patientId,
@@ -26,7 +28,7 @@ export const AppointmentModal = ({
   patientId: string;
   userId: string;
   appointment?: Appointment;
-  type: "schedule" | "cancel";
+  type: "connect" | "cancel";
   title: string;
   description: string;
 }) => {
@@ -37,9 +39,11 @@ export const AppointmentModal = ({
       <DialogTrigger asChild>
         <Button
           variant="ghost"
-          className={`capitalize ${type === "schedule" && "text-green-500"}`}
+          className={`capitalize ${type === "connect" && "text-green-500"}`}
         >
-          {type}
+          <Typography variant="paragraph_sm" className="capitalize">
+            {type}
+          </Typography>
         </Button>
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
