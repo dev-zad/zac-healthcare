@@ -54,7 +54,7 @@ export const PatientForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
         <section className="mb-12 space-y-4">
-          <Typography variant="h4" className="text-white">
+          <Typography variant="h4" className="text-[#3D3D3D]">
             GET LINKED <span className="text-[42px]">👋</span>
           </Typography>
         </section>

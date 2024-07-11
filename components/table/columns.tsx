@@ -7,6 +7,7 @@ import { Appointment } from "@/types/appwrite.types";
 
 import { AppointmentModal } from "../AppointmentModal";
 import { StatusBadge } from "../StatusBadge";
+import { Typography } from "../Typography";
 
 export const columns: ColumnDef<Appointment>[] = [
   {
@@ -20,7 +21,11 @@ export const columns: ColumnDef<Appointment>[] = [
     header: "Name",
     cell: ({ row }) => {
       const appointment = row.original;
-      return <p className="text-14-medium ">{appointment.patient.name}</p>;
+      return (
+        <Typography variant="paragraph_sm" className="text-[#3D3D3D]">
+          {appointment.patient.name}
+        </Typography>
+      );
     },
   },
   {
@@ -59,7 +64,12 @@ export const columns: ColumnDef<Appointment>[] = [
 
       return (
         <div className="flex items-center gap-3">
-          <p className="whitespace-nowrap">{doctor?.name}</p>
+          <Typography
+            variant="paragraph_sm"
+            className="whitespace-nowrap text-[#3D3D3D]"
+          >
+            {doctor?.name}
+          </Typography>
         </div>
       );
     },

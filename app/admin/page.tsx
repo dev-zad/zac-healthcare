@@ -17,17 +17,12 @@ const AdminPage = async () => {
             His Life Metro
           </Typography>
         </Link>
-        <p className="text-16-semibold">Admin Dashboard</p>
+        <Typography variant="paragraph" className="text-white">
+          Admin Dashboard
+        </Typography>
       </header>
 
       <main className="admin-main">
-        <section className="w-full space-y-4">
-          <h1 className="header">Welcome 👋</h1>
-          <p className="text-dark-700">
-            Start the day with managing new appointments
-          </p>
-        </section>
-
         <section className="admin-stat">
           <StatCard
             type="appointments"

@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 
+import { Typography } from "./Typography";
+
 type StatCardProps = {
   type: "appointments" | "pending" | "cancelled";
   count: number;
@@ -25,10 +27,14 @@ export const StatCard = ({ count = 0, label, icon, type }: StatCardProps) => {
           alt="appointments"
           className="size-8 w-fit"
         />
-        <h2 className="text-32-bold text-white">{count}</h2>
+        <Typography variant="h1" className="px-4">
+          {count}
+        </Typography>
       </div>
 
-      <p className="text-14-regular">{label}</p>
+      <Typography variant="paragraph_md" className="">
+        {label}
+      </Typography>
     </div>
   );
 };
