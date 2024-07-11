@@ -11,12 +11,11 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Healthcare Patient Management System",
-  description:
-    "A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
-  icons: {
-    icon: "/assets/icons/logo-icon.svg",
-  },
+  title: "His Life Metro",
+  description: "LOVE GOD. MAKE DISCIPLES. IMPACT OUR WORLD.",
+  // icons: {
+  //   icon: "/assets/icons/logo-icon.svg",
+  // },
 };
 
 export default function RootLayout({
