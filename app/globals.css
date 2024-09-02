@@ -35,8 +35,7 @@
   .left-sidebar {
     @apply hidden lg:flex;
   }
-
-  .right-sidebar {
+  q .right-sidebar {
     @apply hidden xl:flex;
   }
 
